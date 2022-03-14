@@ -143,3 +143,17 @@ requirements.txt
 python_api.md
 /examples/*
 /util/*
+
+# Specific files
+carla/agents/navigation/agent.py
+carla/agents/navigation/basic_agent.py
+carla/agents/navigation/behavior_agent.py
+carla/agents/navigation/controller.py
+carla/agents/navigation/global_route_planner.py
+carla/agents/navigation/global_route_planner_dao.py
+carla/agents/navigation/local_planner.py
+carla/agents/navigation/local_planner_behavior.py
+carla/agents/navigation/roaming_agent.py
+carla/agents/navigation/types_behavior.py
+carla/scene_layout.py
+pilotnet/client_controller.py
