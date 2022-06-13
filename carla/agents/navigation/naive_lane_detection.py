@@ -1,6 +1,5 @@
 # Navigate this file at PythonAPI\carla\agents\navigation
 
-import random
 import sys
 import glob
 import os
@@ -120,7 +119,8 @@ grp.setup()
 spawn_points = world.get_map().get_spawn_points()
 a = carla.Location(spawn_points[0].location)
 b = carla.Location(spawn_points[-1].location)
-w1 = grp.trace_route(a, b) 
+# w1 = grp.trace_route(a, b) 
+
 
 world.debug.draw_point(a,color=carla.Color(r=255, g=0, b=0),size=1.6 ,life_time=120.0)
 world.debug.draw_point(b,color=carla.Color(r=255, g=0, b=0),size=1.6 ,life_time=120.0)
@@ -130,12 +130,7 @@ wps=[]
 # for i in range(len(w1)):
 #     wps.append(w1[i][0])
 #     world.debug.draw_point(w1[i][0].transform.location,color=carla.Color(r=255, g=0, b=0),size=0.4 ,life_time=120.0)
-w_cur = amap.get_waypoint(a)
-for i in range(100):
-    w_next = random.choice(list(w_cur.next(1)))
-    wps.append(w_next)
-    w_cur = w_next
-    world.debug.draw_point(w_next.transform.location,color=carla.Color(r=255, g=0, b=0),size=0.4 ,life_time=120.0)
+wps = 
 
 client.start_recorder("./recording02.log")
 vehicle=spawn_vehicle(carla.Transform(carla.Location(spawn_points[0].location)))
@@ -144,5 +139,4 @@ PID=setup_PID(vehicle)
 speed=30
 drive_through_plan(wps,vehicle,speed,PID)
 print("stop record")
-vehicle.destroy()
 # client.stop_recorder()

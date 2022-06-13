@@ -1,5 +1,7 @@
 cd ~/carla/
-./CarlaUE4.sh -quality-level=Low -opengl
+./CarlaUE4.sh /Game/Carla/Maps/Town04 -windowed -quality-level=Low -opengl
+
 conda activate carla
 cd PythonAPI/pilotnet
-python viz_cv2.py
+python minimal.py
+python naive_lane_detection.py
