@@ -132,9 +132,9 @@ dmypy.json
 
 *.jpg
 *.xsd
-*.log
-*.xodr
-*.h5
+# *.log
+# *.xodr
+# *.h5
 __*
 requirements.txt
 /carla/dist/*
